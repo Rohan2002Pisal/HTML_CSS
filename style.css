@@ -1,0 +1,508 @@
+*{
+    /* 6> CSS rules to specify families -> jab fonts search kiya tab webpage par tha. niche */
+    font-family: 'Montserrat', sans-serif;
+    /* 7> other properties for web page , margin , bg-color , text-color , overlow */
+
+    margin: 0;
+    background-color:#232323;
+    color:white;
+    overflow: hidden;  /* Scrolling vali proprety hai hidden matlab scroll nahi kar payenge*/
+}
+
+
+/* 8> Now Ab layout ki bari ,so display set karnge flex(main container ka) */
+.main{
+    display: flex;
+
+    /* 10> so hamre jo 3 boxes(main ke andhar) hai unhne pure screen ki height mile so vh(view port height)*/
+
+    height: 100vh;
+    padding:0.5rem;
+}
+
+/*9> Acche se box dikhe isiliye unko color dedo*/
+.sidebar{
+    background-color: black;
+    width: 340px;
+
+
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+}
+.main-content{
+    /* background-color: #121212; */
+    flex: 1;
+
+    border-radius: 1rem;
+
+    overflow:auto;
+
+    padding:0 1.5rem;
+}
+.music-player{
+    background-color: black;
+    bottom:0;
+    width: 100%;
+    position: fixed;
+    height: 72px;
+
+
+    border-radius: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color:white;
+
+}
+.nav {
+    background-color:#121212;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    margin:0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.nav-option1{
+    line-height: 2.5rem;
+
+    opacity: 0.7; /*default light rahega and jaise hi hover karoge toh dark banega*/
+
+    padding: 0.5rem 0.75rem; /* Thoda aur acche se home and search ko set karne ke liye (top-bottom)(left-right) ye padding lagayi for nav-option container ke liye*/
+
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    
+}
+
+.nav-option2{
+    line-height: 2.5rem;
+
+    opacity: 0.7; /*default light rahega and jaise hi hover karoge toh dark banega*/
+
+    padding: 0.5rem 0.75rem; /* Thoda aur acche se home and search ko set karne ke liye (top-bottom)(left-right) ye padding lagayi for nav-option container ke liye*/
+     
+    border-bottom-left-radius: 0.25rem;
+
+    border-bottom-right-radius: 0.25rem;
+}
+
+.nav-option1:hover{
+    opacity: 1;
+}
+
+.nav-option2:hover{
+    opacity: 1;
+}
+
+.nav-option1 i{
+ font-size: 1.25rem;
+
+}
+
+.nav-option2 i{
+    font-size: 1.25rem;
+   
+   }
+
+.nav-option1 a{
+ font-size: 1rem;
+
+ 
+ margin-left: 1rem; /*yani jo home hai vo icon se thoda dur hai*/
+ 
+}
+
+.nav-option2 a{
+    font-size: 1rem;
+   
+    
+    margin-left: 1rem; /*yani jo home hai vo icon se thoda dur hai*/
+    
+   }
+/* 11> Now ab 3 boxes ko uneki jagh pae leao
+   side bar ki width hai 340px , main-conyent kaeh rha hai ki side bar ko jitna lena hai leno do but jo bahega vo sab uska hoga (flex : 1;) , music-player ye bottm par(and hil nahi rah hai fixed hai) hai and uske width di hai 100% and height hai 72px */
+
+/* 12> now jo boxes(3 boxes) ke edges hai unhe curve karna hai 
+      border-radius : 1rem  , 1 rem yani 16px , and jo scroll bar hai vo sirf main-content me hi hai so put overflow:auto in main-content*/
+
+/* 13> Now jo real color hai use dijiye grey #121212 and just music player ka black color hai ,and side bar ka bhi black hi hai but isme jo content hai (nav and librayr inek boxes grey hai)*/
+
+/*Now go to html for further for 14.*/
+
+/* 15> so hame nav ki (yane jisme home and search hai unki dipsly : flex karenge ) toh ye ek line me aayenge
+    display: flex; // pura ek-line me aayega yani horizontal me so ek ke nixhe ek chaiye toh direction oppodite karne padegi
+    flex-direction: col;
+    // toh now ab hame chahiye ki nav ka jo content hai vo vertically center me aajaye, toh vertically center ke lliye (justify-content: center) basically justify-conyent: center se, defalut me content horizontally center me ataa hai but yaha direction opposite hai so 
+    jjustify-content:center;  
+    // height bhi badhi hai
+    height:100px;
+
+    // padding (top-bottom)(left-right)
+    padding:0.5(8px)rem 0.75(12px)rem;
+
+    16> now indivisual div ko style karenge hame and search dono hi nav-option vale box mw hai
+    .nav-option{
+          line-heigth:40px;(2.5rem)
+    }
+
+    // nav-option me jitne i hai unko 1.25rem karo(font-size)
+    // nav-option me jitne a hai unhe 1 rem karo(font-size)
+    
+    */ 
+
+
+    /* 18> Library ko style karenge */
+    /* Library(IS LIKE SIDEBAR) ka bag-color is grey(#121212)  and jo kuch same properties nav ko di thi vahi laibrayr ko bhi deni hai */
+
+    .library{
+        background-color: #121212;
+        border-radius: 1rem;
+        height:100%;
+        margin: 0.5rem;
+        padding: 0.5rem 0.75rem;
+
+    }
+
+    .option {
+       display : flex; /* ek line me lane ke liye sab content and responsive banane kelie*/
+       justify-content: space-between; /**isse jo lib-options ka box and icons ka box equal me space share karenge , yani left me jayega library and right me jayega  + ->(icon ka box) */
+       align-items: center;
+       border-radius: 0.25rem;
+       
+    }
+
+    .lib-option img{  /*Spotify icon ka img ki size j=ko baki icon jitna rakha hai*/
+        height:1.25rem;
+        width:1.25rem;
+    }
+
+    /* So 20> ab hame library ke icons ko style karna hai unhe achhe se rakhana hai.*/
+
+    .icons{
+
+        font-size: 1.25rem;
+        display:flex; /*Display flex is given just for responsivness for icons*/
+    }
+
+    .icons i{
+        margin-right:1.25rem;
+        opacity:0.7;
+    }
+
+    .icons i:hover{
+        opacity: 1;
+    }
+
+    /* Now boxes kp style karenge (hamere boxes ke andar lib-box hai )*/
+
+    .lib-boxe{
+        height: 7.5rem;
+        background-color: #232323;
+        margin: 1rem 0 1rem 0;
+        padding: 1rem 1.25rem;
+        border-radius: 0.75rem;
+    }
+
+    .box-p1{
+       font-size: 0.8rem;
+       font-weight: 700;
+       padding: 0.5rem;
+       
+    }
+    .box-p2{
+        font-size: 0.7rem;
+        opacity: 0.8;
+        padding: 0.5rem;
+    }
+
+    .badge{
+        background-color: #ffff;
+        color:black;
+        height: 2rem;
+        border:none;
+        border-radius: 100px;
+        padding: 0.25rem 1rem;
+        font-weight: 700;
+
+        margin-top: 1.1rem;
+
+        width:fit-content;
+    }
+
+   /* now main content ke nav ko style karenge whats difference between sticky and fixed.*/
+
+   .sticky-nav{
+    position: sticky;
+    top:0; /*Top 0 kyu diya? ->position: fixed;:
+
+    An element with position: fixed; is positioned relative to the browser window.
+    It will not move even if the page is scrolled.
+    If you set top: 0;, it means the element will be fixed at the top of the viewport.
+    
+    
+    position: sticky;:
+
+   An element with position: sticky; is positioned based on the user's scroll position. It acts like relative positioning until the element reaches a specified point during scrolling.
+   Once the element reaches that point, it becomes fixed and remains in that position.
+   If you set top: 0;, it means the element will be sticky at the top of its containing element.
+    */
+    display:flex;
+    
+ 
+    justify-content: space-between; /*yaha se sare icons ke bixh me space ayegi so better hai pahile 2 icons ko ek dive me and n=bakike three icons ko dusare div me*/
+
+    align-items: center;
+  
+
+    padding:0.5rem 0.75rem;
+   
+    z-index: 10; /* to aviod overlapping*/
+    
+   }
+
+   .sticky-nav-icons{
+         margin-left: 0.8rem; /* < > ko left se margin di hai */
+         padding-top:0.8rem ;
+   }
+
+   .sticky-nav-options{
+    display:flex;
+    align-items: baseline;
+    margin-right:3rem;
+   }
+
+   .sticky-nav-options button{
+    margin-left: 3rem;
+   }
+
+   /*isse hoga ye ki jab window ki size kam hogi tab ye hide, and hide1 class ke element hai vo gayab honge*/
+  @media(max-width:1000px){
+     .hide{
+        display:none;
+     }
+  }
+
+  @media(max-width:800px){
+    .hide1{
+       display:none;
+    }
+ }
+   
+
+ /*24> cards ko style karenge*/
+ .card{
+    width:150px;
+    border-radius: 0.5rem;
+    border:solid;
+    opacity:0.8;
+    padding:1rem;
+    margin:0.5rem 0.5rem 0.5rem 0;
+ }
+
+ .cards-container1{
+    display:flex;
+
+    flex-wrap: wrap; /* agar jyada images hone ke karan images sikud gaye toh is property se vo niche ki line me jayenge but sikudenge nahi */
+    margin:2rem 0 2rem 0;
+ }
+
+ .card-img{
+    width:100%;
+    border-radius: 0.5rem;
+ }
+
+
+ .footer{
+    height:300px;
+    display:flex;
+    align-items: center;  /* items bhi center me aagye*/
+ }
+
+ .line{
+    /* Ye Footer ke according height and width lega (uske parent ke according )*/
+    height:50%;
+    width:90%;
+    border-top: 1px solid white;
+    opacity:0.5;
+ }
+
+ /* now ab scorll karte vakt jo content hai vo mixed-up ho raha hai with nav bar so use hatne ke liye hame position set karni padegi nav bar ki (Overlappig hatane ke liye) yani z-index property set karo in sticky-nav*/
+
+
+ /*Now Ab music palyer ko acche se karna hai style so start*/
+ /*pahile 3 , album , player and control ko unki heigth and width set karo.*/
+
+ .music-player{
+   display:flex;
+   justify-content: space-between; /* teeno me (album , player and control) space between hogs*/
+   align-items: center; /* and items center me align honge */ 
+ }
+
+ .album{
+    
+    width:25%; 
+    
+
+ }
+
+ .album-container{
+    display: flex;
+   
+    padding:0.5rem;
+
+    justify-content: center;
+
+    align-items: center;
+ }
+
+ .album-container img{
+    border-radius: 0.7rem;
+
+ }
+
+ .album-container img:hover{
+    
+     cursor: pointer;
+ }
+
+
+ .alb-info1{
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-left:0.7rem;
+ }
+
+ .alb-info1:hover{
+    text-decoration: underline;
+ }
+
+ .alb-info2{
+    font-size: 0.9rem;
+    opacity: 0.8;
+    width:80px;
+    padding-left:0.75rem;
+ }
+
+ .alb-info2:hover{
+    text-decoration: underline;
+ }
+
+
+
+
+ .player{
+ 
+  width:50%;
+  
+
+ }
+
+ .control{
+
+  width:25%;
+
+ }
+
+ .control-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+ }
+
+ .control-container i{
+    background-color: black;
+    opacity: 0.7;
+ }
+
+ .control-container i:hover{
+   opacity: 1;
+   cursor: pointer;
+ }
+
+ .V-bar{
+    appearance: none;
+    width:30%;
+    background-color:transparent;
+    cursor: pointer;
+    margin-right:2rem;
+ }
+
+ .V-bar::-webkit-slider-runnable-track{
+    height:0.2rem;
+    background-color: #dddddd;
+    border-radius: 100px;
+}
+
+.V-bar::-webkit-slider-thumb{
+  appearance: none;
+  height: 1rem;
+  width:1rem;
+  background-color: #1bd760;
+  border-radius: 50%; /* to convert rectangle into circle*/
+  margin-top: -6px;
+}
+ 
+
+ .player-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .player-control-icon{
+    height:1.2rem;
+    margin-left: 1.7rem;
+    background-color: black;
+    opacity: 0.7;
+    margin-top:0.3rem;
+    
+ }
+
+ .player-control-icon:hover{
+    opacity: 2;
+ }
+
+ .playback-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .progress-bar{
+    width:70%;
+    appearance: none;/* pre-set things ko hatana hai toh apperance property ka use karna hai */
+    background-color:transparent;
+    cursor: pointer;
+ }
+
+/*Note ::  https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html 
+
+ track (slider)   and thumb ( silder par ghumne vala gola)
+
+ Thumb and track are styleable, though the required pseudo-elements are browser-dependent:
+
+The thumb is addressed as -webkit-slider-thumb, -moz-range-thumb, or -ms-thumb.
+The track is addressed as -webkit-slider-runnable-track, -moz-range-track, or -ms-track.
+  
+*/
+
+.progress-bar::-webkit-slider-runnable-track{
+    height:0.2rem;
+    background-color: #dddddd;
+    border-radius: 100px;
+}
+
+.progress-bar::-webkit-slider-thumb{
+  appearance: none;
+  height: 1rem;
+  width:1rem;
+  background-color: #1bd760;
+  border-radius: 50%; /* to convert rectangle into circle*/
+  margin-top: -6px;
+}
